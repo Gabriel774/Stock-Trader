@@ -4,8 +4,41 @@ Vue.use(VueX)
 
 export default new VueX.Store({
     state: {
-        nome: "Gabriel",
-        dados: {}
+        dados: {
+            funds: 10000,
+            stocks: [
+              {
+                name: 'BMW',
+                price: 93,
+                quantity: 0
+              },
+              {
+                name: 'Google',
+                price: 29,
+                quantity: 0
+              },
+              {
+                name: 'Apple',
+                price: 150,
+                quantity: 0
+              },
+              {
+                name: 'Twitter',
+                price: 56,
+                quantity: 0
+              },
+              {
+                name: 'Amazon',
+                price: 66,
+                quantity: 0
+              },
+              {
+                name: 'Samsung',
+                price: 37,
+                quantity: 0
+              }
+            ]
+          }
     },
     getters: {
         getFunds(state) {

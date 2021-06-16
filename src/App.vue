@@ -13,14 +13,15 @@
 <script>
 import Header from "./components/Header";
 import Saldo from "./components/Saldo";
-import { mapMutations } from 'vuex';
+import { mapMutations } from "vuex";
 export default {
   components: { "app-header": Header, Saldo },
   created() {
-    this.$http("").then((res) => this.carregar(res.data));
+    let datalocal = localStorage.getItem("dados");
+    this.carregar(JSON.parse(datalocal));
   },
-    methods: {
-    ...mapMutations(['carregar'])
+  methods: {
+    ...mapMutations(["carregar"]),
   },
 };
 </script>

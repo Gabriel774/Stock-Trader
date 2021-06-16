@@ -109,13 +109,13 @@ export default {
     methods: {
       ...mapMutations(['carregar', 'finalizarDia']),
       initLoad() {
-        this.$http("").then((res) => this.carregar(res.data))
+        let datalocal = localStorage.getItem("dados")
+        this.carregar(JSON.parse(datalocal))
       },
       salvar() {
         const dados = {funds: this.getFunds, stocks: this.getStocks}
         const stringjson = JSON.stringify(dados)
-        const savejson = JSON.parse(stringjson)
-        this.$http.post("", savejson)
+        localStorage.setItem("dados", stringjson)
       }
     },
 };

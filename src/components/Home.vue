@@ -6,6 +6,12 @@
     <v-sheet elevation="2" class="pa-2 mt-3 fluid primary">
       <v-icon class="primary">info</v-icon>
       <span class="headline white--text font-weight-light">
+        Bem-vindo ao StockTrader! Seu objetivo neste jogo é comprar ações e vendelas pelo maior valor possível!
+      </span>
+    </v-sheet>
+    <v-sheet elevation="2" class="pa-2 mt-3 fluid primary">
+      <v-icon class="primary">info</v-icon>
+      <span class="headline white--text font-weight-light">
         Você pode Salvar & Carregar os Dados
       </span>
     </v-sheet>
@@ -34,8 +40,8 @@ export default {
   methods: {
     ...mapMutations(['restart']),
     initRestart() {
-      let r = confirm("Tem certeza de que deseja reinicar StockTrader?")
-      if(r == true) this.restart()
+      let r = confirm("Tem certeza de que deseja reinicar seu progresso no StockTrader?")
+      if(r) this.restart()
     }
   }
 };
