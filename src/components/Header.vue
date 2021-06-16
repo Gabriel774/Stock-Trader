@@ -109,8 +109,9 @@ export default {
     methods: {
       ...mapMutations(['carregar', 'finalizarDia']),
       initLoad() {
-        let datalocal = localStorage.getItem("dados")
-        this.carregar(JSON.parse(datalocal))
+        let dataLocalJSON = localStorage.getItem("dados")
+        let dataLocal = localStorage.parse(dataLocalJSON)
+        this.carregar(JSON.parse(dataLocal))
       },
       salvar() {
         const dados = {funds: this.getFunds, stocks: this.getStocks}

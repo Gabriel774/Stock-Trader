@@ -17,8 +17,11 @@ import { mapMutations } from "vuex";
 export default {
   components: { "app-header": Header, Saldo },
   created() {
-    let datalocal = localStorage.getItem("dados");
-    this.carregar(JSON.parse(datalocal));
+    let dataLocalJSON = localStorage.getItem("dados");
+    if(Array.isArray(dataLocalJSON) && dataLocalJSON != '' && dataLocalJSON != undefined && dataLocalJSON != null) {
+    let dataLocal = JSON.parse(dataLocalJSON)
+    this.carregar(JSON.parse(dataLocal));
+    }
   },
   methods: {
     ...mapMutations(["carregar"]),
