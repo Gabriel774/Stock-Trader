@@ -35,7 +35,6 @@ export default {
     ...mapGetters(['getFunds'])
   },
   mounted() {
-      this.$http("").then((res) => (this.valor = res.data))
   },
   methods: {
     ...mapMutations(['restart']),

@@ -110,8 +110,8 @@ export default {
       ...mapMutations(['carregar', 'finalizarDia']),
       initLoad() {
         let dataLocalJSON = localStorage.getItem("dados")
-        let dataLocal = localStorage.parse(dataLocalJSON)
-        this.carregar(JSON.parse(dataLocal))
+        console.log(dataLocalJSON);
+        this.carregar(JSON.parse(dataLocalJSON))
       },
       salvar() {
         const dados = {funds: this.getFunds, stocks: this.getStocks}
